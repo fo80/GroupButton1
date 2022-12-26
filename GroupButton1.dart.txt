@@ -1,0 +1,55 @@
+import 'package:flutter/material.dart';
+import 'package:group_button/group_button.dart';
+
+class GroubButton extends StatefulWidget {
+  const GroubButton({Key? key}) : super(key: key);
+
+  @override
+  State<GroubButton> createState() => _GroubButtonState();
+}
+
+class _GroubButtonState extends State<GroubButton> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("GropButton"),
+        centerTitle: true,
+      ),
+      body: Padding(
+          padding: const EdgeInsets.only(top: 100, left: 10, right: 10),
+          child: Column(children: [
+            GroupButton(
+                onSelected: (value, index, isSelected) {
+                  if (index == 0) {}
+                  print("Fouad");
+                },
+                maxSelected: 2,
+                isRadio: false,
+                options: GroupButtonOptions(
+                    spacing: 15,
+                    buttonWidth: 114,
+                    buttonHeight: 60,
+                    selectedBorderColor: Colors.blueAccent,
+                    selectedColor: Colors.green,
+                    unselectedBorderColor: Colors.pink,
+                    borderRadius: BorderRadius.circular(15),
+                    unselectedColor: Colors.cyan[50],
+                    direction: Axis.horizontal,
+                    mainGroupAlignment: MainGroupAlignment.center,
+                    crossGroupAlignment: CrossGroupAlignment.center,
+                    selectedTextStyle:
+                        TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+                    groupingType: GroupingType.wrap),
+                buttons: [
+                  "1",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "6",
+                ])
+          ])),
+    );
+  }
+}
